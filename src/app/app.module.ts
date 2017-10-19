@@ -11,8 +11,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Facebook } from '@ionic-native/facebook';
 import { ApiServiceProvider } from '../providers/api-service/api-service';
-import { LoginServiceProvider } from '../providers/login-service/login-service';
+import { FbServiceProvider } from '../providers/fb-service/fb-service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}, ApiServiceProvider, LoginServiceProvider
+    Facebook,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}, ApiServiceProvider, FbServiceProvider
   ]
 })
 export class AppModule {}
